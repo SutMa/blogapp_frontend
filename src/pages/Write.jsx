@@ -18,7 +18,7 @@ const Write = () => {
     try {
       const formData = new FormData();
       formData.append("file", file);
-      const res = await axios.post("/upload", formData);
+      const res = await axios.post("http://18.217.158.254/upload", formData);
       return res.data;
     } catch (err) {
       console.log(err);
@@ -31,13 +31,13 @@ const Write = () => {
 
     try {
       state
-        ? await axios.put(`/posts/${state.id}`, {
+        ? await axios.put(`http://18.217.158.254/posts/${state.id}`, {
             title,
             desc: value,
             cat,
             img: file ? imgUrl : "",
           })
-        : await axios.post(`/posts/`, {
+        : await axios.post(`http://18.217.158.254/posts/`, {
             title,
             desc: value,
             cat,
