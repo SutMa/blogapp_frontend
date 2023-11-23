@@ -20,7 +20,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://18.217.158.254/auth/register", inputs);
+      await axios.post("/auth/register", inputs);
       navigate("/login");
     } catch (err) {
       setError(err.response.data);
